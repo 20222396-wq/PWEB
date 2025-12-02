@@ -1,0 +1,194 @@
+.config-niveles-container {
+  background: rgba(20, 20, 30, 0.95);
+  border: 2px solid #00ff00;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+}
+
+.config-header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.config-title {
+  color: #00ff00;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0 0 8px 0;
+  text-shadow: 0 0 10px #00ff00;
+}
+
+.config-subtitle {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin: 0;
+}
+
+.niveles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.nivel-item {
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #00ff00;
+  border-radius: 8px;
+  padding: 16px;
+  transition: all 0.3s ease;
+}
+
+.nivel-item:hover {
+  border-color: #00ff00;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+  transform: translateY(-2px);
+}
+
+.nivel-badge {
+  background: linear-gradient(135deg, #00ff00, #00cc00);
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.nivel-numero {
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.nivel-input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nivel-input-group label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.xp-input {
+  width: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #00ff00;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.xp-input:focus {
+  outline: none;
+  border-color: #00ff00;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.xp-input:disabled {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: rgba(0, 255, 0, 0.3);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+}
+
+.mensaje {
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  text-align: center;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+}
+
+.mensaje.exito {
+  background: rgba(0, 255, 0, 0.1);
+  border: 2px solid #00ff00;
+  color: #00ff00;
+}
+
+.mensaje.error {
+  background: rgba(255, 0, 0, 0.1);
+  border: 2px solid #ff0000;
+  color: #ff6666;
+}
+
+.btn-guardar {
+  width: 100%;
+  padding: 14px;
+  background: transparent;
+  border: 2px solid #00ff00;
+  border-radius: 8px;
+  color: #00ff00;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.btn-guardar:hover:not(:disabled) {
+  background: #00ff00;
+  color: #000;
+  box-shadow: 0 0 20px #00ff00;
+  transform: translateY(-2px);
+}
+
+.btn-guardar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.info-box {
+  margin-top: 20px;
+  padding: 16px;
+  background: rgba(0, 255, 0, 0.05);
+  border-left: 4px solid #00ff00;
+  border-radius: 6px;
+}
+
+.info-box p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.info-box strong {
+  color: #00ff00;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .niveles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .config-niveles-container {
+    padding: 16px;
+  }
+
+  .config-title {
+    font-size: 18px;
+  }
+}
