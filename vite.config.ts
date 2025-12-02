@@ -7,4 +7,8 @@ export default defineConfig({
   // IMPORTANT for GitHub Pages: set base to repo name
   // Replace 'PWEB' if your repository name differs
   base: '/PWEB/',
+  build: {
+    // Emit static files to docs/ for "Deploy from a branch"
+    outDir: 'docs',
+  },
 })
