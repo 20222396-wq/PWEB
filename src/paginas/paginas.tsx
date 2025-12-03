@@ -18,7 +18,7 @@ export const Inicio = () => {
   useEffect(() => {
     const fetchStreams = async () => {
       try {
-        const res = await fetch('http://localhost:4000/api/streams');
+        const res = await fetch('https://pweb-backend.onrender.com/api/streams');
         const streamsReales = await res.json();
         setListaStreams([...streamsReales, ...STREAMS_FAKE]);
       } catch (error) {

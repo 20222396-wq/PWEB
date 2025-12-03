@@ -46,7 +46,7 @@ const ConfiguracionNiveles = () => {
 
     try {
       const token = localStorage.getItem('token');
-      const res = await fetch('http://localhost:4000/api/streamer/configurar-niveles', {
+        const res = await fetch('https://pweb-backend.onrender.com/api/streamer/configurar-niveles', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -74,7 +74,7 @@ const ConfiguracionNiveles = () => {
     const cargarConfiguracion = async () => {
       try {
         const token = localStorage.getItem('token');
-        const res = await fetch('http://localhost:4000/api/streamer/obtener-niveles', {
+          const res = await fetch('https://pweb-backend.onrender.com/api/streamer/obtener-niveles', {
           headers: {
             'Authorization': `Bearer ${token}`
           }

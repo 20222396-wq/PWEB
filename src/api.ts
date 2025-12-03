@@ -69,14 +69,14 @@ export type AuthResponse = {
 };
 
 export function registerUser(payload: RegisterPayload, options?: ApiOptions) {
-  return request<AuthResponse>('/auth/register', {
+  return request<AuthResponse>('/api/register', {
     method: 'POST',
     body: JSON.stringify(payload),
   }, options);
 }
 
 export function login(payload: { usuario?: string; email?: string; password: string }, options?: ApiOptions) {
-  return request<AuthResponse>('/auth/login', {
+  return request<AuthResponse>('/api/login', {
     method: 'POST',
     body: JSON.stringify(payload),
   }, options);

@@ -20,7 +20,7 @@ const Registro = () => {
     try {
       const datosAEnviar = { ...formData, rol: 'espectador' };
 
-      const res = await fetch('http://localhost:4000/api/register', {
+      const res = await fetch('https://pweb-backend.onrender.com/api/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(datosAEnviar)
