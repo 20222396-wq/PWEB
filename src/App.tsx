@@ -28,6 +28,7 @@ function App() {
           
           <Route path="/stream/:id" element={<StreamRoom />} /> 
           <Route path="/mistream" element={<MiStream />} />
+          <Route path="*" element={<Inicio />} />
         </Routes>
       </div>
     </div>
