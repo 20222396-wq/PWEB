@@ -1,3 +1,5 @@
+import type { NivelGlobal, Regalo } from "./types";
+
 export type ApiOptions = {
   baseUrl?: string;
   getToken?: () => string | null;
@@ -82,8 +84,48 @@ export function login(payload: { usuario?: string; email?: string; password: str
   }, options);
 }
 
+// --- NUEVAS FUNCIONES ---
+
+// Obtener niveles globales (Planetas)
+export async function obtenerNiveles(): Promise<{ success: boolean; niveles: NivelGlobal[] }> {
+  return request('/api/streamer/obtener-niveles', { method: 'GET' });
+}
+
+// Obtener regalos de un streamer
+export function obtenerRegalos(streamerId: string) {
+  return request<Regalo[]>(`/api/regalos/${streamerId}`, { method: 'GET' });
+}
+
+// Enviar un regalo (Gastar monedas, ganar puntos)
+export function enviarRegalo(regaloId: string, token: string) {
+  return request<{ msg: string; nuevoSaldo: number; nuevosPuntos: number }>(
+    '/api/regalos/enviar',
+    {
+      method: 'POST',
+      body: JSON.stringify({ regaloId }),
+      headers: { Authorization: `Bearer ${token}` } // Importante enviar el token
+    }
+  );
+}
+
+// Iniciar Stream
+export function iniciarStream(usuario: string, titulo: string, token: string) {
+    return request<{ msg: string; streamId: string }>(
+        '/api/streams/start',
+        {
+            method: 'POST',
+            body: JSON.stringify({ usuario, titulo, categoria: 'General' }),
+            headers: { Authorization: `Bearer ${token}` }
+        }
+    );
+}
+
+// Recuerda exportar todo en tu objeto api
 export const api = {
-  registerUser,
-  login,
+  // ... anteriores
+  obtenerNiveles,
+  obtenerRegalos,
+  enviarRegalo,
+  iniciarStream
 };
 
