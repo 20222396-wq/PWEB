@@ -95,13 +95,13 @@ const Navbar = () => {
               onClick={() => setShowMenu(!showMenu)}
               title="Menú de usuario"
             >
-              {user.nombre.charAt(0).toUpperCase()}
+              {(user?.nombre?.[0] ?? user?.usuario?.[0] ?? user?.email?.[0] ?? '?').toUpperCase()}
             </div>
 
             {showMenu && (
               <div className="user-dropdown">
                 <div className="dropdown-header">
-                  <p style={{margin:0, color:'white', fontWeight:'bold'}}>{user.nombre}</p>
+                  <p style={{margin:0, color:'white', fontWeight:'bold'}}>{user?.nombre ?? user?.usuario ?? user?.email ?? 'Usuario'}</p>
                 </div>
                 
                 <Link to="/dashboard" className="dropdown-item">
