@@ -4,18 +4,10 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.tsx'
 import './App.css' 
 
-
-const rootEl = document.getElementById('root');
-if (rootEl) {
-  rootEl.textContent = 'Cargando…';
-  try {
-    ReactDOM.createRoot(rootEl).render(
-      <BrowserRouter basename={import.meta.env?.BASE_URL || '/PWEB/'}>
-        <App />
-      </BrowserRouter>
-    );
-  } catch (e) {
-    console.error('Error montando la app:', e);
-    rootEl.textContent = 'Error cargando la aplicación. Revisa la consola.';
-  }
-}
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+        <BrowserRouter basename={import.meta.env?.BASE_URL || '/PWEB/'}>
+      <App />
+    </BrowserRouter>
+  </React.StrictMode>,
+)
